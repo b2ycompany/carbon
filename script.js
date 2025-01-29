@@ -1,82 +1,105 @@
-// Script para gerenciar telas, animações e seleção de idioma
+// Suporte de troca de idioma e animações
 
-// Variáveis
-const languageContainer = document.querySelector('.language-container');
-const introContainer = document.querySelector('.intro-container');
-const mainContainer = document.querySelector('.main-container');
-const flags = document.querySelectorAll('.flag');
+const languageContainer = document.querySelector(".language-container");
+const introContainer = document.querySelector(".intro-container");
+const mainContainer = document.querySelector(".main-container");
+const flags = document.querySelectorAll(".flag");
 
-// Função para animação de carregamento
-function animateLoading() {
-  const loadingContainer = document.querySelector('.loader');
-  loadingContainer.innerHTML = `
-    <div class="loading-scene">
-      <div class="electric-car"></div>
-      <div class="charging-station"></div>
-      <div class="forest"></div>
-    </div>
-  `;
-}
-
-// Inicializa a animação ao mostrar a tela de intro
-function showIntro() {
-  languageContainer.classList.add('hidden');
-  introContainer.classList.remove('hidden');
-  animateLoading();
-
-  setTimeout(() => {
-    introContainer.classList.add('hidden');
-    mainContainer.classList.remove('hidden');
-  }, 4000);
-}
-
-// Clique para selecionar idioma
-flags.forEach(flag => {
-  flag.addEventListener('click', () => {
-    const lang = flag.dataset.lang;
-    setLanguage(lang);
-    showIntro();
-  });
-});
-
-// Função de seleção de idioma (mock)
-function setLanguage(lang) {
-  switch (lang) {
-    case 'pt-BR':
-      alert('Idioma selecionado: Português');
-      break;
-    case 'en-US':
-      alert('Selected Language: English');
-      break;
-    case 'es-ES':
-      alert('Idioma seleccionado: Español');
-      break;
-    default:
-      alert('Idioma não suportado');
+// Referência ao conteúdo dinâmico para traduzir
+const contentData = {
+  "pt-BR": {
+    "heroTitle": "Tecnologia Sustentável",
+    "heroDescription": "Solucionando desafios com inovação e respeito ao meio ambiente",
+    "aboutTitle": "Sobre Nós",
+    "aboutText": "A Lion Solution é líder em soluções tecnológicas que promovem sustentabilidade e impacto positivo no meio ambiente.",
+    "footerText": "© 2025 Lion Solution | Tecnologia Sustentável para um Mundo Melhor"
+  },
+  "en-US": {
+    "heroTitle": "Sustainable Technology",
+    "heroDescription": "Solving challenges with innovation and environmental respect",
+    "aboutTitle": "About Us",
+    "aboutText": "Lion Solution is a leader in technological solutions that promote sustainability and positive environmental impact.",
+    "footerText": "© 2025 Lion Solution | Sustainable Technology for a Better World"
+  },
+  "es-ES": {
+    "heroTitle": "Tecnología Sostenible",
+    "heroDescription": "Resolviendo desafíos con innovación y respeto al medio ambiente",
+    "aboutTitle": "Sobre Nosotros",
+    "aboutText": "Lion Solution es líder en soluciones tecnológicas que promueven la sostenibilidad y un impacto positivo en el medio ambiente.",
+    "footerText": "© 2025 Lion Solution | Tecnología Sostenible para un Mundo Mejor"
   }
+};
+
+// Adiciona evento de clique para cada bandeira
+flags.forEach(flag => {
+  flag.addEventListener("click", () => {
+    const selectedLang = flag.dataset.lang;
+
+    console.log(`Idioma selecionado: ${selectedLang}`);
+
+    // Oculta a tela de seleção de idioma
+    languageContainer.style.display = "none";
+
+    // Mostra a tela de animação
+    introContainer.classList.remove("hidden");
+
+    // Após 3 segundos, carrega o site principal com conteúdo traduzido
+    setTimeout(() => {
+      introContainer.style.display = "none";
+      mainContainer.classList.remove("hidden");
+      applyContent(selectedLang);
+    }, 3000); // Tempo em milissegundos (3 segundos)
+  });
+});
+
+function applyContent(lang) {
+  document.querySelector("#hero h1").textContent = contentData[lang].heroTitle;
+  document.querySelector("#hero p").textContent = contentData[lang].heroDescription;
+  document.querySelector("#about h2").textContent = contentData[lang].aboutTitle;
+  document.querySelector("#about p").textContent = contentData[lang].aboutText;
+  document.querySelector("footer p").textContent = contentData[lang].footerText;
 }
 
-// Scroll suave para seções
-const navLinks = document.querySelectorAll('nav a');
-navLinks.forEach(link => {
-  link.addEventListener('click', (event) => {
+// Animação do carrinho elétrico
+function createLoadingScene() {
+  const loadingScene = document.querySelector(".loading-scene");
+
+  const car = document.createElement("div");
+  car.classList.add("electric-car");
+
+  const forest = document.createElement("div");
+  forest.classList.add("forest");
+
+  const chargingStation = document.createElement("div");
+  chargingStation.classList.add("charging-station");
+
+  loadingScene.appendChild(car);
+  loadingScene.appendChild(forest);
+  loadingScene.appendChild(chargingStation);
+}
+
+createLoadingScene();
+
+// Adiciona interatividade ao menu
+const menuLinks = document.querySelectorAll("header nav a");
+menuLinks.forEach(link => {
+  link.addEventListener("mouseover", () => {
+    link.style.color = "#00ffcc";
+    link.style.textShadow = "0px 0px 12px #00ffcc";
+  });
+  link.addEventListener("mouseout", () => {
+    link.style.color = "#fff";
+    link.style.textShadow = "none";
+  });
+});
+
+// Efeito de rolagem suave
+menuLinks.forEach(link => {
+  link.addEventListener("click", event => {
     event.preventDefault();
-    const targetId = link.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-
-    targetSection.scrollIntoView({ behavior: 'smooth' });
+    const targetId = link.getAttribute("href").substring(1);
+    document.getElementById(targetId).scrollIntoView({
+      behavior: "smooth"
+    });
   });
-});
-
-// Animação ao rolar para elementos visíveis
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-});
-
-document.querySelectorAll('section, .app').forEach(section => {
-  observer.observe(section);
 });
