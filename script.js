@@ -6,15 +6,28 @@ const introContainer = document.querySelector('.intro-container');
 const mainContainer = document.querySelector('.main-container');
 const flags = document.querySelectorAll('.flag');
 
-// Tempo de espera para exibição de telas
+// Função para animação de carregamento
+function animateLoading() {
+  const loadingContainer = document.querySelector('.loader');
+  loadingContainer.innerHTML = `
+    <div class="loading-scene">
+      <div class="electric-car"></div>
+      <div class="charging-station"></div>
+      <div class="forest"></div>
+    </div>
+  `;
+}
+
+// Inicializa a animação ao mostrar a tela de intro
 function showIntro() {
   languageContainer.classList.add('hidden');
   introContainer.classList.remove('hidden');
+  animateLoading();
 
   setTimeout(() => {
     introContainer.classList.add('hidden');
     mainContainer.classList.remove('hidden');
-  }, 3000);
+  }, 4000);
 }
 
 // Clique para selecionar idioma
