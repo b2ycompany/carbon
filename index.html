@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lion Solution - Soluções em Tecnologia Sustentável</title>
+  <title>Lion Solution - Tecnologia Sustentável</title>
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
 </head>
-
 <body>
   <!-- Tela de Seleção de Idioma -->
   <div class="language-container">
@@ -36,7 +34,13 @@
   <div class="intro-container hidden">
     <div class="animation-content">
       <h1>Carregando Lion Solution...</h1>
-      <div class="loader"></div>
+      <div class="loader">
+        <div class="loading-scene">
+          <div class="electric-car"></div>
+          <div class="charging-station"></div>
+          <div class="forest"></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -46,6 +50,7 @@
       <div class="logo">Lion Solution</div>
       <nav>
         <ul>
+          <li><a href="#hero">Início</a></li>
           <li><a href="#about">Sobre</a></li>
           <li><a href="#apps">Aplicativos</a></li>
           <li><a href="#contact">Contato</a></li>
@@ -54,12 +59,11 @@
     </header>
 
     <section id="hero">
+      <video class="background-video" autoplay muted loop>
+        <source src="https://www.videvo.net/videvo_files/converted/2021_11/preview/211029_02_Business_04_1080p.mp412822.mp4" type="video/mp4">
+      </video>
       <h1>Tecnologia Sustentável</h1>
       <p>Solucionando desafios com inovação e respeito ao meio ambiente</p>
-      <video autoplay muted loop class="background-video">
-        <source src="background.mp4" type="video/mp4">
-        Seu navegador não suporta vídeos.
-      </video>
     </section>
 
     <section id="about">
@@ -83,10 +87,14 @@
       </div>
     </section>
 
+    <section id="contact">
+      <h2>Contato</h2>
+      <p>Entre em contato conosco através de nossas redes sociais e canais oficiais.</p>
+    </section>
+
     <footer>
       <p>© 2025 Lion Solution | Tecnologia Sustentável para um Mundo Melhor</p>
     </footer>
   </div>
 </body>
-
 </html>
