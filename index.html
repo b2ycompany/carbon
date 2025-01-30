@@ -1,99 +1,105 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lion Solution - Tecnologia Sustentável</title>
+  <title>Lion Solution - Soluções em Tecnologia Sustentável</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
+  <script src="script.js" defer></script>
+  <script src="map_script.js" defer></script>
+  <script src="animations.js" defer></script>
 </head>
 <body>
-  <!-- Tela de Seleção de Idioma -->
-  <div class="language-container">
-    <div class="language-content">
-      <h1>Bem-vindo à Lion Solution</h1>
-      <p>Selecione seu idioma:</p>
-      <div class="flags">
-        <div class="flag" data-lang="pt-BR">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Português">
-          <span>Português</span>
-        </div>
-        <div class="flag" data-lang="en-US">
-          <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English">
-          <span>English</span>
-        </div>
-        <div class="flag" data-lang="es-ES">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Español">
-          <span>Español</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Tela de Animação -->
-  <div class="intro-container hidden">
-    <div class="animation-content">
-      <h1>Carregando Lion Solution...</h1>
+  <!-- Splash Screen with Animated Loader -->
+  <div id="splash-screen" class="splash-screen">
+    <div class="loading-content">
+      <h1>Lion Solution</h1>
+      <p>Soluções em Tecnologia Sustentável</p>
       <div class="loader">
-        <div class="loading-scene">
-          <div class="electric-car"></div>
-          <div class="charging-station"></div>
-          <div class="forest"></div>
-        </div>
+        <div class="wheel"></div>
       </div>
     </div>
   </div>
 
-  <!-- Site Principal -->
-  <div class="main-container hidden">
-    <header>
-      <div class="logo">Lion Solution</div>
-      <nav>
-        <ul>
-          <li><a href="#hero">Início</a></li>
-          <li><a href="#about">Sobre</a></li>
+  <!-- Main Content -->
+  <div id="main-content" class="hidden">
+    <header class="header">
+      <nav class="navbar">
+        <h1 class="logo">Lion Solution</h1>
+        <ul class="nav-links">
+          <li><a href="#about">Sobre Nós</a></li>
           <li><a href="#apps">Aplicativos</a></li>
+          <li><a href="#blog">Matérias</a></li>
           <li><a href="#contact">Contato</a></li>
         </ul>
       </nav>
     </header>
 
-    <section id="hero">
-      <video class="background-video" autoplay muted loop>
-        <source src="https://www.videvo.net/videvo_files/converted/2021_11/preview/211029_02_Business_04_1080p.mp412822.mp4" type="video/mp4">
-      </video>
-      <h1>Tecnologia Sustentável</h1>
-      <p>Solucionando desafios com inovação e respeito ao meio ambiente</p>
+    <section id="hero" class="hero">
+      <h2>Tecnologia Sustentável para um Futuro Melhor</h2>
+      <p>Desenvolvemos soluções que transformam o presente e preservam o futuro.</p>
     </section>
 
-    <section id="about">
+    <section id="about" class="about">
       <h2>Sobre Nós</h2>
-      <p>A Lion Solution é líder em soluções tecnológicas que promovem sustentabilidade e impacto positivo no meio ambiente.</p>
+      <p>Somos especialistas em soluções tecnológicas sustentáveis para veículos elétricos, carbono e sustentabilidade.</p>
     </section>
 
-    <section id="apps">
-      <h2>Nossos Aplicativos</h2>
-      <div class="app">
+    <section id="apps" class="apps">
+      <h2>Aplicativos</h2>
+      <div class="app-card">
         <h3>B2Y Carbon</h3>
-        <p>Gerencie os quilômetros rodados e acompanhe o sequestro de carbono.</p>
+        <p>Gestão e controle dos quilômetros rodados pelo veículo e sequestro de carbono.</p>
       </div>
-      <div class="app">
+      <div class="app-card">
         <h3>B2Y Frequency</h3>
-        <p>Aplicativo de vibrações terapêuticas para bem-estar.</p>
+        <p>Aplicativo que trabalha com vibrações terapêuticas para o bem-estar.</p>
       </div>
-      <div class="app">
+      <div class="app-card">
         <h3>B2Y Sales</h3>
-        <p>Classificados para vendas, compras e investimentos em negócios.</p>
+        <p>Classificados para vendas, compras e investimento em negócios.</p>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Contato</h2>
-      <p>Entre em contato conosco através de nossas redes sociais e canais oficiais.</p>
+    <section id="blog" class="blog">
+      <h2>Matérias em Destaque</h2>
+      <div class="articles">
+        <article class="article">
+          <h3>Redução de Carbono com Veículos Elétricos</h3>
+          <p>Saiba como os veículos elétricos estão ajudando a reduzir a emissão de carbono e preservar o meio ambiente.</p>
+        </article>
+        <article class="article">
+          <h3>Terapias Alternativas com Vibração</h3>
+          <p>Descubra os benefícios das vibrações terapêuticas para o equilíbrio físico e mental.</p>
+        </article>
+        <article class="article">
+          <h3>O Futuro dos Negócios Sustentáveis</h3>
+          <p>Como investir em negócios que promovem sustentabilidade e impacto positivo no mundo.</p>
+        </article>
+      </div>
     </section>
 
-    <footer>
-      <p>© 2025 Lion Solution | Tecnologia Sustentável para um Mundo Melhor</p>
+    <section id="contact" class="contact">
+      <h2>Contato</h2>
+      <p>Entre em contato para saber mais sobre nossas soluções.</p>
+      <div id="map" class="map"></div>
+      <form class="contact-form">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <p>© 2025 Lion Solution. Todos os direitos reservados.</p>
     </footer>
   </div>
 </body>
