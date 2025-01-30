@@ -185,57 +185,80 @@ header nav a:hover {
   font-size: 1.2rem;
 }
 
-/* Contato Section */
+/* Contact Section */
 #contact {
   padding: 4rem 2rem;
-  background-color: #001f16;
+  background-color: #004d40;
+  color: #fff;
   text-align: center;
 }
 #contact h2 {
   font-size: 2.5rem;
   text-shadow: 0px 0px 12px #00ffcc;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .contact-info {
   margin-bottom: 2rem;
 }
 .contact-info p {
   font-size: 1.2rem;
+  margin: 0.5rem 0;
 }
 .contact-form {
   max-width: 600px;
   margin: 0 auto;
-  background: #00352e;
+  background: rgba(255, 255, 255, 0.1);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 .contact-form label {
   display: block;
-  margin: 1rem 0 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
   color: #00ffcc;
 }
 .contact-form input,
 .contact-form textarea {
   width: 100%;
   padding: 0.8rem;
+  margin-bottom: 1rem;
   border: none;
   border-radius: 4px;
-  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+}
+.contact-form textarea {
+  height: 150px;
 }
 .contact-form button {
   background: #00ffcc;
   color: #004d40;
-  padding: 1rem 2rem;
   border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 1.1rem;
   transition: background 0.3s;
 }
 .contact-form button:hover {
-  background: #00e6b3;
+  background: #00e6b8;
+}
+.map-container {
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /* Footer */
