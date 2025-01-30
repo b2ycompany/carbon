@@ -38,6 +38,7 @@
         <div class="loading-scene">
           <div class="electric-car"></div>
           <div class="charging-station"></div>
+          <div class="forest"></div>
         </div>
       </div>
     </div>
@@ -88,24 +89,30 @@
 
     <section id="contact">
       <h2>Contato</h2>
-      <p>Entre em contato conosco através do formulário abaixo ou visite nosso escritório:</p>
-      <form id="contact-form">
+      <p>Entre em contato conosco através de nossas redes sociais e canais oficiais.</p>
+      <div class="contact-details">
+        <p><strong>Endereço:</strong> Torre Jacarandá - Av. Marcos Penteado de Ulhoa Rodrigues, 939 - 8º andar - Alphaville, Barueri - SP, 06460-040</p>
+        <p><strong>Telefone:</strong> (11) 1234-5678</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Corporate_Building.jpg" alt="Torre Jacarandá">
+      </div>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.862741623271!2d-46.84852458451516!3d-23.504934484715713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf022ea434b5a9%3A0xf2dc6d5b6c5d69f7!2sTorre%20Jacarand%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1674932269921!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <form class="contact-form">
         <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+
+        <label for="phone">Telefone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Digite seu telefone" required>
 
         <label for="message">Mensagem:</label>
-        <textarea id="message" name="message" required></textarea>
+        <textarea id="message" name="message" placeholder="Escreva sua mensagem" required></textarea>
 
-        <button type="submit">Enviar</button>
+        <button type="submit">Enviar Mensagem</button>
       </form>
-
-      <div id="map">
-        <!-- Google Maps Embedded Link -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.9526206167624!2d-122.0842496850581!3d37.42206537982505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb771dc90c5cd%3A0xdbd43ba0ed156a14!2sGoogleplex!5e0!3m2!1sen!2sus!4v1674697841648!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
     </section>
 
     <footer>
