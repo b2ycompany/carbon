@@ -1,90 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lion Solution - Soluções em Tecnologia Sustentável</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Lion Solution - Tecnologia Sustentável</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
-  <script src="map_script.js" defer></script>
-  <script src="animations.js" defer></script>
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Splash Screen with Animated Loader -->
-  <div id="splash-screen" class="splash-screen">
-    <div class="loading-content">
-      <h1>Lion Solution</h1>
-      <p>Soluções em Tecnologia Sustentável</p>
-      <div class="loader">
-        <div class="wheel"></div>
+  <!-- Tela de Seleção de Idioma -->
+  <div class="language-container">
+    <div class="language-content">
+      <h1>Bem-vindo à Lion Solution</h1>
+      <p>Selecione seu idioma:</p>
+      <div class="flags">
+        <div class="flag" data-lang="pt-BR">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Português">
+          <span>Português</span>
+        </div>
+        <div class="flag" data-lang="en-US">
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English">
+          <span>English</span>
+        </div>
+        <div class="flag" data-lang="es-ES">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Español">
+          <span>Español</span>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Main Content -->
-  <div id="main-content" class="hidden">
-    <header class="header">
-      <nav class="navbar">
-        <h1 class="logo">Lion Solution</h1>
-        <ul class="nav-links">
-          <li><a href="#about">Sobre Nós</a></li>
+  <!-- Tela de Animação -->
+  <div class="intro-container hidden">
+    <div class="animation-content">
+      <h1>Carregando Lion Solution...</h1>
+      <div class="loader">
+        <div class="loading-scene">
+          <div class="electric-car"></div>
+          <div class="charging-station"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Principal -->
+  <div class="main-container hidden">
+    <header>
+      <div class="logo">Lion Solution</div>
+      <nav>
+        <ul>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
           <li><a href="#apps">Aplicativos</a></li>
-          <li><a href="#blog">Matérias</a></li>
           <li><a href="#contact">Contato</a></li>
         </ul>
       </nav>
     </header>
 
-    <section id="hero" class="hero">
-      <h2>Tecnologia Sustentável para um Futuro Melhor</h2>
-      <p>Desenvolvemos soluções que transformam o presente e preservam o futuro.</p>
+    <section id="hero">
+      <video class="background-video" autoplay muted loop>
+        <source src="https://www.videvo.net/videvo_files/converted/2021_11/preview/211029_02_Business_04_1080p.mp412822.mp4" type="video/mp4">
+      </video>
+      <h1>Tecnologia Sustentável</h1>
+      <p>Solucionando desafios com inovação e respeito ao meio ambiente</p>
     </section>
 
-    <section id="about" class="about">
+    <section id="about">
       <h2>Sobre Nós</h2>
-      <p>Somos especialistas em soluções tecnológicas sustentáveis para veículos elétricos, carbono e sustentabilidade.</p>
+      <p>A Lion Solution é líder em soluções tecnológicas que promovem sustentabilidade e impacto positivo no meio ambiente.</p>
     </section>
 
-    <section id="apps" class="apps">
-      <h2>Aplicativos</h2>
-      <div class="app-card">
+    <section id="apps">
+      <h2>Nossos Aplicativos</h2>
+      <div class="app">
         <h3>B2Y Carbon</h3>
-        <p>Gestão e controle dos quilômetros rodados pelo veículo e sequestro de carbono.</p>
+        <p>Gerencie os quilômetros rodados e acompanhe o sequestro de carbono.</p>
       </div>
-      <div class="app-card">
+      <div class="app">
         <h3>B2Y Frequency</h3>
-        <p>Aplicativo que trabalha com vibrações terapêuticas para o bem-estar.</p>
+        <p>Aplicativo de vibrações terapêuticas para bem-estar.</p>
       </div>
-      <div class="app-card">
+      <div class="app">
         <h3>B2Y Sales</h3>
-        <p>Classificados para vendas, compras e investimento em negócios.</p>
+        <p>Classificados para vendas, compras e investimentos em negócios.</p>
       </div>
     </section>
 
-    <section id="blog" class="blog">
-      <h2>Matérias em Destaque</h2>
-      <div class="articles">
-        <article class="article">
-          <h3>Redução de Carbono com Veículos Elétricos</h3>
-          <p>Saiba como os veículos elétricos estão ajudando a reduzir a emissão de carbono e preservar o meio ambiente.</p>
-        </article>
-        <article class="article">
-          <h3>Terapias Alternativas com Vibração</h3>
-          <p>Descubra os benefícios das vibrações terapêuticas para o equilíbrio físico e mental.</p>
-        </article>
-        <article class="article">
-          <h3>O Futuro dos Negócios Sustentáveis</h3>
-          <p>Como investir em negócios que promovem sustentabilidade e impacto positivo no mundo.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
+    <section id="contact">
       <h2>Contato</h2>
-      <p>Entre em contato para saber mais sobre nossas soluções.</p>
-      <div id="map" class="map"></div>
-      <form class="contact-form">
+      <p>Entre em contato conosco através do formulário abaixo ou visite nosso escritório:</p>
+      <form id="contact-form">
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required>
 
@@ -96,10 +101,15 @@
 
         <button type="submit">Enviar</button>
       </form>
+
+      <div id="map">
+        <!-- Google Maps Embedded Link -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.9526206167624!2d-122.0842496850581!3d37.42206537982505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb771dc90c5cd%3A0xdbd43ba0ed156a14!2sGoogleplex!5e0!3m2!1sen!2sus!4v1674697841648!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
     </section>
 
-    <footer class="footer">
-      <p>© 2025 Lion Solution. Todos os direitos reservados.</p>
+    <footer>
+      <p>© 2025 Lion Solution | Tecnologia Sustentável para um Mundo Melhor</p>
     </footer>
   </div>
 </body>
