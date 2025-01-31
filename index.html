@@ -3,88 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lion Solution - Futuro Sustentável</title>
+  <title>Lion Solution - Tecnologia Sustentável</title>
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Loading com Carrinho Elétrico -->
-  <div class="loading-screen">
-    <h1>Carregando a Inovação...</h1>
-    <div class="track">
-      <div class="electric-car"></div>
+  <!-- Tela de Seleção de Idioma -->
+  <div class="language-container">
+    <div class="language-content">
+      <h1>Bem-vindo à Lion Solution</h1>
+      <p>Selecione seu idioma:</p>
+      <div class="flags">
+        <div class="flag" data-lang="pt-BR">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Português">
+          <span>Português</span>
+        </div>
+        <div class="flag" data-lang="en-US">
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English">
+          <span>English</span>
+        </div>
+        <div class="flag" data-lang="es-ES">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Español">
+          <span>Español</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tela de Animação -->
+  <div class="intro-container hidden">
+    <div class="animation-content">
+      <h1>Carregando Lion Solution...</h1>
+      <div class="loader">
+        <div class="loading-scene">
+          <div class="electric-car"></div>
+          <div class="track"></div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Site Principal -->
-  <div class="main-content hidden">
+  <div class="main-container hidden">
     <header>
       <div class="logo">Lion Solution</div>
       <nav>
         <ul>
-          <li><a href="#home">Início</a></li>
+          <li><a href="#hero">Início</a></li>
           <li><a href="#about">Sobre</a></li>
-          <li><a href="#solutions">Soluções</a></li>
+          <li><a href="#apps">Aplicativos</a></li>
           <li><a href="#contact">Contato</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- Seção Home -->
-    <section id="home" class="hero">
-      <h1>Bem-vindo ao Futuro Sustentável</h1>
-      <p>Transformando o mundo com soluções tecnológicas inovadoras.</p>
+    <section id="hero">
       <video class="background-video" autoplay muted loop>
-        <source src="https://www.videvo.net/videvo_files/converted/2017_08/preview/170718_003_Dockside_04_1080p.mp412404.mp4" type="video/mp4">
+        <source src="https://www.videvo.net/videvo_files/converted/2021_11/preview/211029_02_Business_04_1080p.mp412822.mp4" type="video/mp4">
       </video>
+      <h1>Tecnologia Sustentável</h1>
+      <p>Solucionando desafios com inovação e respeito ao meio ambiente</p>
     </section>
 
-    <!-- Seção Sobre -->
     <section id="about">
       <h2>Sobre Nós</h2>
-      <p>A Lion Solution lidera o desenvolvimento de tecnologias sustentáveis para um mundo melhor.</p>
-      <div class="about-image">
-        <img src="https://example.com/environment.jpg" alt="Tecnologia Verde">
+      <p>A Lion Solution é líder em soluções tecnológicas que promovem sustentabilidade e impacto positivo no meio ambiente.</p>
+      <img src="https://example.com/sustainable-tech.jpg" alt="Tecnologia Sustentável" class="about-image">
+    </section>
+
+    <section id="apps">
+      <h2>Nossos Aplicativos</h2>
+      <div class="app">
+        <h3>B2Y Carbon</h3>
+        <p>Gerencie os quilômetros rodados e acompanhe o sequestro de carbono.</p>
+      </div>
+      <div class="app">
+        <h3>B2Y Frequency</h3>
+        <p>Aplicativo de vibrações terapêuticas para bem-estar.</p>
+      </div>
+      <div class="app">
+        <h3>B2Y Sales</h3>
+        <p>Classificados para vendas, compras e investimentos em negócios.</p>
       </div>
     </section>
 
-    <!-- Seção Soluções -->
-    <section id="solutions">
-      <h2>Nossas Soluções</h2>
-      <div class="solution">
-        <h3>Mobilidade Elétrica</h3>
-        <p>Desenvolvemos tecnologias para um transporte mais limpo e eficiente.</p>
-      </div>
-      <div class="solution">
-        <h3>Energias Renováveis</h3>
-        <p>Inovações em sistemas solares e eólicos para um planeta mais verde.</p>
-      </div>
-      <div class="solution">
-        <h3>Smart Cities</h3>
-        <p>Cidades inteligentes que integram sustentabilidade e tecnologia.</p>
-      </div>
-    </section>
-
-    <!-- Seção Contato -->
     <section id="contact">
       <h2>Contato</h2>
-      <p>Visite nosso escritório:</p>
-      <address>Torre Jacarandá, Av. Marcos Penteado de Ulhoa Rodrigues, 939 - 8º andar - Alphaville, Barueri - SP, 06460-040</address>
-      <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.678273340877!2d-46.85046078450981!3d-23.592155584665443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf02b614b70769%3A0x7ff8b476798999d!2sTorre%20Jacarand%C3%A1!5e0!3m2!1sen!2sbr!4v1693257659210" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <p>Entre em contato conosco através de nossas redes sociais e canais oficiais.</p>
+      <div class="contact-details">
+        <p>Telefone: (11) 1234-5678</p>
+        <p>Endereço: Torre Jacarandá - Av. Marcos Penteado de Ulhoa Rodrigues, 939 - 8º andar - Alphaville, Barueri - SP, 06460-040</p>
+        <div id="map"></div>
       </div>
-      <form id="contact-form">
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Mensagem:</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button type="submit">Enviar</button>
-      </form>
     </section>
 
     <footer>
