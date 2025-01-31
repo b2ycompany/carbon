@@ -73,17 +73,18 @@ body {
   overflow: hidden;
 }
 .electric-car {
-  width: 100px;
-  height: 50px;
-  background: blue;
+  width: 120px;
+  height: 60px;
+  background: linear-gradient(to right, #00ffcc, #00796b);
   position: absolute;
   left: 0;
-  bottom: 50px;
-  border-radius: 5px;
-  animation: drive 4s linear infinite;
+  bottom: 100px;
+  border-radius: 10px;
+  animation: drive 3s linear infinite;
+  box-shadow: 0px 5px 15px rgba(0, 255, 204, 0.6);
 }
 @keyframes drive {
-  0% { left: -120px; }
+  0% { left: -150px; }
   100% { left: 100%; }
 }
 .forest {
@@ -175,6 +176,11 @@ header nav a:hover {
   background-color: #002d26;
   color: #fff;
   text-align: center;
+  animation: slideIn 2s;
+}
+@keyframes slideIn {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
 #about h2 {
   font-size: 2.5rem;
@@ -192,4 +198,18 @@ footer {
   text-align: center;
   padding: 1.5rem 0;
   box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Dynamic Image Effects */
+.section-image {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  animation: zoomIn 10s infinite alternate;
+  border-radius: 12px;
+}
+@keyframes zoomIn {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
 }
