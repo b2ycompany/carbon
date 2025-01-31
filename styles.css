@@ -1,4 +1,4 @@
-/* Reset Geral */
+/* Reset Básico */
 * {
   margin: 0;
   padding: 0;
@@ -53,7 +53,7 @@ body {
   font-size: 1rem;
 }
 
-/* Tela de Animação com o Carrinho Elétrico */
+/* Tela de Animação */
 .intro-container {
   position: fixed;
   top: 0;
@@ -69,32 +69,37 @@ body {
 .loading-scene {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 100%;
   overflow: hidden;
-  background: #222;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
 }
 .electric-car {
   width: 100px;
   height: 50px;
-  background: url('https://i.imgur.com/xJGXAd6.png') no-repeat center;
-  background-size: cover;
+  background: blue;
   position: absolute;
   left: 0;
-  bottom: 40px;
+  bottom: 50px;
+  border-radius: 5px;
   animation: drive 4s linear infinite;
 }
 @keyframes drive {
   0% { left: -120px; }
   100% { left: 100%; }
 }
-.track {
+.forest {
   position: absolute;
+  background: url('https://example.com/forest.png') no-repeat;
   width: 100%;
-  height: 5px;
+  height: 200px;
+  bottom: 0;
+}
+.charging-station {
+  width: 60px;
+  height: 120px;
   background: #00ffcc;
-  bottom: 35px;
+  position: absolute;
+  right: 10%;
+  bottom: 50px;
 }
 
 /* Site Principal */
@@ -144,7 +149,7 @@ header nav a:hover {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url('https://i.imgur.com/W7K0R2O.jpg') center/cover no-repeat;
+  background: url('https://example.com/tech-bg.jpg') center/cover no-repeat;
   text-align: center;
   color: #fff;
   padding: 2rem;
@@ -180,74 +185,6 @@ header nav a:hover {
   font-size: 1.2rem;
 }
 
-/* Formulário de Contato */
-#contact {
-  padding: 4rem 2rem;
-  background-color: #004d40;
-  color: #fff;
-}
-#contact h2 {
-  font-size: 2.5rem;
-  text-shadow: 0px 0px 12px #00ffcc;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 2rem;
-}
-.contact-info {
-  max-width: 400px;
-}
-.contact-info p {
-  margin: 0.5rem 0;
-}
-.contact-form {
-  background: #00332e;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0px 0px 12px rgba(0, 255, 204, 0.5);
-  max-width: 400px;
-  width: 100%;
-}
-.contact-form label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-.contact-form input, .contact-form textarea {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border-radius: 5px;
-  border: none;
-  background: #004d40;
-  color: #fff;
-}
-.contact-form button {
-  background: #00ffcc;
-  color: #00332e;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.contact-form button:hover {
-  background: #00bfa5;
-}
-
-/* Mapa Responsivo */
-.map {
-  width: 100%;
-  height: 300px;
-  border-radius: 10px;
-  margin-top: 1rem;
-  box-shadow: 0 0 12px rgba(0, 255, 204, 0.5);
-}
-
 /* Footer */
 footer {
   background: #004d40;
@@ -255,7 +192,4 @@ footer {
   text-align: center;
   padding: 1.5rem 0;
   box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.3);
-}
-footer p {
-  font-size: 1rem;
 }
