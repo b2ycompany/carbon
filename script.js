@@ -1,11 +1,11 @@
-// Suporte de troca de idioma e animações
+// Atualização completa para animações do carrinho elétrico e suporte visual
 
 const languageContainer = document.querySelector(".language-container");
 const introContainer = document.querySelector(".intro-container");
 const mainContainer = document.querySelector(".main-container");
 const flags = document.querySelectorAll(".flag");
 
-// Referência ao conteúdo dinâmico para traduzir
+// Conteúdo dinâmico para tradução
 const contentData = {
   "pt-BR": {
     "heroTitle": "Tecnologia Sustentável",
@@ -30,25 +30,17 @@ const contentData = {
   }
 };
 
-// Adiciona evento de clique para cada bandeira
 flags.forEach(flag => {
   flag.addEventListener("click", () => {
     const selectedLang = flag.dataset.lang;
-
-    console.log(`Idioma selecionado: ${selectedLang}`);
-
-    // Oculta a tela de seleção de idioma
     languageContainer.style.display = "none";
-
-    // Mostra a tela de animação
     introContainer.classList.remove("hidden");
 
-    // Após 3 segundos, carrega o site principal com conteúdo traduzido
     setTimeout(() => {
       introContainer.style.display = "none";
       mainContainer.classList.remove("hidden");
       applyContent(selectedLang);
-    }, 3000); // Tempo em milissegundos (3 segundos)
+    }, 3000);
   });
 });
 
@@ -60,55 +52,24 @@ function applyContent(lang) {
   document.querySelector("footer p").textContent = contentData[lang].footerText;
 }
 
-// Animação do carrinho elétrico
+// Criação da cena de carregamento com animação do carrinho
 function createLoadingScene() {
   const loadingScene = document.querySelector(".loading-scene");
 
+  const road = document.createElement("div");
+  road.classList.add("road");
+
   const car = document.createElement("div");
   car.classList.add("electric-car");
-  car.innerHTML = "🚗"; // Emojis como exemplo visual
 
-  const track = document.createElement("div");
-  track.classList.add("track");
-
-  loadingScene.appendChild(track);
-  track.appendChild(car);
+  loadingScene.appendChild(road);
+  loadingScene.appendChild(car);
 }
 
 createLoadingScene();
 
-// Animação do carrinho
-function animateCar() {
-  const car = document.querySelector(".electric-car");
-  let position = 0;
-
-  function moveCar() {
-    if (position > window.innerWidth) {
-      position = -100;
-    }
-    car.style.transform = `translateX(${position}px)`;
-    position += 5;
-    requestAnimationFrame(moveCar);
-  }
-  moveCar();
-}
-
-animateCar();
-
-// Adiciona interatividade ao menu
+// Menu com rolagem suave
 const menuLinks = document.querySelectorAll("header nav a");
-menuLinks.forEach(link => {
-  link.addEventListener("mouseover", () => {
-    link.style.color = "#00ffcc";
-    link.style.textShadow = "0px 0px 12px #00ffcc";
-  });
-  link.addEventListener("mouseout", () => {
-    link.style.color = "#fff";
-    link.style.textShadow = "none";
-  });
-});
-
-// Efeito de rolagem suave
 menuLinks.forEach(link => {
   link.addEventListener("click", event => {
     event.preventDefault();
@@ -119,12 +80,29 @@ menuLinks.forEach(link => {
   });
 });
 
-// Imagens animadas nas seções
-function animateImages() {
-  const images = document.querySelectorAll(".animated-image");
-  images.forEach(img => {
-    img.style.animation = "float 6s ease-in-out infinite";
-  });
+// Imagens dinâmicas nas seções
+function loadDynamicImages() {
+  const heroSection = document.querySelector("#hero");
+  heroSection.style.backgroundImage = "url('https://images.unsplash.com/photo-1527430253228-e93688616381?auto=format&fit=crop&w=1950&q=80')";
+
+  const aboutSection = document.querySelector("#about");
+  aboutSection.style.backgroundImage = "url('https://images.unsplash.com/photo-1502920917128-1aa500764b01?auto=format&fit=crop&w=1950&q=80')";
+  aboutSection.style.backgroundSize = "cover";
 }
 
-animateImages();
+loadDynamicImages();
+
+// Efeito de animação de entrada suave para seções
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, {
+  threshold: 0.5
+});
+
+document.querySelectorAll("section").forEach(section => {
+  observer.observe(section);
+});
