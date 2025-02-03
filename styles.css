@@ -72,35 +72,100 @@ body {
   height: 100%;
   overflow: hidden;
 }
+.electric-bar {
+  width: 90%;
+  height: 10px;
+  background: #ccc;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.electric-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #00ffcc, #009688);
+  width: 0%;
+  transition: width 0.3s;
+}
 .electric-car {
-  width: 120px;
-  height: 60px;
-  background: linear-gradient(to right, #00ffcc, #00796b);
+  width: 100px;
+  height: 50px;
+  background: blue;
   position: absolute;
   left: 0;
-  bottom: 100px;
-  border-radius: 10px;
-  animation: drive 3s linear infinite;
-  box-shadow: 0px 5px 15px rgba(0, 255, 204, 0.6);
+  bottom: 20px;
+  border-radius: 5px;
+  animation: drive 4s linear infinite;
 }
 @keyframes drive {
-  0% { left: -150px; }
+  0% { left: -120px; }
   100% { left: 100%; }
 }
+
 .forest {
   position: absolute;
-  background: url('https://example.com/forest.png') no-repeat;
+  background: url('https://www.example.com/forest-animated.png') no-repeat;
   width: 100%;
   height: 200px;
   bottom: 0;
 }
-.charging-station {
-  width: 60px;
-  height: 120px;
-  background: #00ffcc;
+
+/* Barra de carregamento */
+.loading-bar-container {
+  position: relative;
+  width: 300px;
+  height: 10px;
+  background: #333;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+.loading-progress {
+  height: 100%;
+  background: linear-gradient(to right, #00ffcc, #004d40);
+  width: 0%;
+  border-radius: 5px;
+}
+
+/* Seções com vídeo de fundo */
+.section-video {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.section-video::before {
+  content: "";
   position: absolute;
-  right: 10%;
-  bottom: 50px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+.section-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.section-video h2 {
+  position: relative;
+  z-index: 2;
+  font-size: 2.5rem;
+}
+.section-video p {
+  position: relative;
+  z-index: 2;
+  font-size: 1.2rem;
 }
 
 /* Site Principal */
@@ -150,7 +215,7 @@ header nav a:hover {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url('https://example.com/tech-bg.jpg') center/cover no-repeat;
+  background: url('https://www.example.com/tech-bg.jpg') center/cover no-repeat;
   text-align: center;
   color: #fff;
   padding: 2rem;
@@ -176,11 +241,6 @@ header nav a:hover {
   background-color: #002d26;
   color: #fff;
   text-align: center;
-  animation: slideIn 2s;
-}
-@keyframes slideIn {
-  from { transform: translateX(-100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
 }
 #about h2 {
   font-size: 2.5rem;
@@ -198,18 +258,4 @@ footer {
   text-align: center;
   padding: 1.5rem 0;
   box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Dynamic Image Effects */
-.section-image {
-  width: 100%;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  animation: zoomIn 10s infinite alternate;
-  border-radius: 12px;
-}
-@keyframes zoomIn {
-  from { transform: scale(1); }
-  to { transform: scale(1.1); }
 }
