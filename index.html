@@ -1,76 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Energia Futurista</title>
+  <title>Lion Solution - Tecnologia Sustentável</title>
   <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Seletor de idioma -->
+  <!-- Tela de Seleção de Idioma -->
   <div class="language-container">
-    <h1>Escolha o idioma</h1>
-    <div class="flags">
-      <img src="images/flag-br.png" class="flag" alt="Português">
-      <img src="images/flag-en.png" class="flag" alt="English">
-    </div>
-  </div>
-
-  <!-- Tela de Loading -->
-  <div class="intro-container hidden">
-    <div class="loading-container">
-      <div class="loading-bar-background">
-        <div class="loading-bar"></div>
+    <div class="language-content">
+      <h1>Bem-vindo à Lion Solution</h1>
+      <p>Selecione seu idioma:</p>
+      <div class="flags">
+        <div class="flag" data-lang="pt-BR">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Português">
+          <span>Português</span>
+        </div>
+        <div class="flag" data-lang="en-US">
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English">
+          <span>English</span>
+        </div>
+        <div class="flag" data-lang="es-ES">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Español">
+          <span>Español</span>
+        </div>
       </div>
-      <div class="loading-text loading-percentage">0%</div>
     </div>
   </div>
 
-  <!-- Conteúdo principal -->
+  <!-- Tela de Carregamento -->
+  <div class="loading-screen hidden">
+    <h1>Carregando Lion Solution...</h1>
+    <div class="electric-bar">
+      <div class="electric-progress"></div>
+    </div>
+  </div>
+
+  <!-- Site Principal -->
   <div class="main-container hidden">
     <header>
+      <div class="logo">Lion Solution</div>
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Serviços</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#apps">Aplicativos</a></li>
+          <li><a href="#contact">Contato</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
-      <section class="hero">
-        <h1>Bem-vindo ao Futuro da Energia</h1>
-        <p>Soluções sustentáveis e inovadoras para um mundo mais verde.</p>
-      </section>
+    <section id="hero">
+      <h1>Tecnologia Sustentável</h1>
+      <p>Solucionando desafios com inovação e respeito ao meio ambiente</p>
+    </section>
 
-      <section class="about">
-        <h2>Sobre Nós</h2>
-        <p>Somos líderes em energia limpa e sustentável, impulsionando o futuro com eletricidade eficiente.</p>
-      </section>
+    <section id="about">
+      <h2>Sobre Nós</h2>
+      <p>A Lion Solution é líder em soluções tecnológicas que promovem sustentabilidade e impacto positivo no meio ambiente.</p>
+    </section>
 
-      <section class="services">
-        <h2>Nossos Serviços</h2>
-        <ul>
-          <li>Consultoria em Energia</li>
-          <li>Infraestrutura Elétrica</li>
-          <li>Gestão de Recursos Renováveis</li>
-        </ul>
-      </section>
+    <section id="apps">
+      <h2>Nossos Aplicativos</h2>
+      <div class="app">
+        <h3>B2Y Carbon</h3>
+        <p>Gerencie os quilômetros rodados e acompanhe o sequestro de carbono.</p>
+      </div>
+      <div class="app">
+        <h3>B2Y Frequency</h3>
+        <p>Aplicativo de vibrações terapêuticas para bem-estar.</p>
+      </div>
+      <div class="app">
+        <h3>B2Y Sales</h3>
+        <p>Classificados para vendas, compras e investimentos em negócios.</p>
+      </div>
+    </section>
 
-      <section class="contact">
-        <h2>Entre em Contato</h2>
-        <p>Email: contato@energiafuturista.com</p>
-        <p>Telefone: (11) 99999-9999</p>
-      </section>
-    </main>
+    <section id="contact">
+      <h2>Contato</h2>
+      <p>Entre em contato conosco através de nossas redes sociais e canais oficiais.</p>
+    </section>
 
     <footer>
-      <p>&copy; 2025 Energia Futurista. Todos os direitos reservados.</p>
+      <p>© 2025 Lion Solution | Tecnologia Sustentável para um Mundo Melhor</p>
     </footer>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
