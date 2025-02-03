@@ -1,108 +1,70 @@
-// Atualização completa para animações do carrinho elétrico e suporte visual
+// Função para exibir a tela de seleção de idioma
+function showLanguageSelection() {
+  const languageContainer = document.querySelector('.language-container');
+  languageContainer.classList.remove('hidden');
+}
 
-const languageContainer = document.querySelector(".language-container");
-const introContainer = document.querySelector(".intro-container");
-const mainContainer = document.querySelector(".main-container");
-const flags = document.querySelectorAll(".flag");
+// Função para ocultar a tela de seleção de idioma
+function hideLanguageSelection() {
+  const languageContainer = document.querySelector('.language-container');
+  languageContainer.classList.add('hidden');
+  showIntroAnimation();
+}
 
-// Conteúdo dinâmico para tradução
-const contentData = {
-  "pt-BR": {
-    "heroTitle": "Tecnologia Sustentável",
-    "heroDescription": "Solucionando desafios com inovação e respeito ao meio ambiente",
-    "aboutTitle": "Sobre Nós",
-    "aboutText": "A Lion Solution é líder em soluções tecnológicas que promovem sustentabilidade e impacto positivo no meio ambiente.",
-    "footerText": "© 2025 Lion Solution | Tecnologia Sustentável para um Mundo Melhor"
-  },
-  "en-US": {
-    "heroTitle": "Sustainable Technology",
-    "heroDescription": "Solving challenges with innovation and environmental respect",
-    "aboutTitle": "About Us",
-    "aboutText": "Lion Solution is a leader in technological solutions that promote sustainability and positive environmental impact.",
-    "footerText": "© 2025 Lion Solution | Sustainable Technology for a Better World"
-  },
-  "es-ES": {
-    "heroTitle": "Tecnología Sostenible",
-    "heroDescription": "Resolviendo desafíos con innovación y respeto al medio ambiente",
-    "aboutTitle": "Sobre Nosotros",
-    "aboutText": "Lion Solution es líder en soluciones tecnológicas que promueven la sostenibilidad y un impacto positivo en el medio ambiente.",
-    "footerText": "© 2025 Lion Solution | Tecnología Sostenible para un Mundo Mejor"
-  }
+// Função para exibir a animação de carregamento
+function showIntroAnimation() {
+  const introContainer = document.querySelector('.intro-container');
+  introContainer.classList.remove('hidden');
+  setTimeout(() => {
+    introContainer.classList.add('hidden');
+    showMainContent();
+  }, 3000); // Duração da animação de carregamento
+}
+
+// Função para exibir o conteúdo principal
+function showMainContent() {
+  document.body.classList.remove('hidden');
+}
+
+// Inicialização ao carregar a página
+window.onload = function () {
+  document.body.classList.add('hidden');
+  showLanguageSelection();
+
+  // Evento de clique para selecionar o idioma
+  document.querySelectorAll('.flag').forEach(flag => {
+    flag.addEventListener('click', hideLanguageSelection);
+  });
 };
 
-flags.forEach(flag => {
-  flag.addEventListener("click", () => {
-    const selectedLang = flag.dataset.lang;
-    languageContainer.style.display = "none";
-    introContainer.classList.remove("hidden");
+// Função para animar a barra de carregamento elétrica
+function animateLoadingBar() {
+  const loadingBar = document.querySelector('.loading-bar');
+  const electricCar = document.querySelector('.electric-car-icon');
 
-    setTimeout(() => {
-      introContainer.style.display = "none";
-      mainContainer.classList.remove("hidden");
-      applyContent(selectedLang);
-    }, 3000);
-  });
-});
+  let progress = 0;
+  const interval = setInterval(() => {
+    progress += 1;
+    loadingBar.style.width = `${progress}%`;
+    electricCar.style.left = `${progress}%`;
 
-function applyContent(lang) {
-  document.querySelector("#hero h1").textContent = contentData[lang].heroTitle;
-  document.querySelector("#hero p").textContent = contentData[lang].heroDescription;
-  document.querySelector("#about h2").textContent = contentData[lang].aboutTitle;
-  document.querySelector("#about p").textContent = contentData[lang].aboutText;
-  document.querySelector("footer p").textContent = contentData[lang].footerText;
-}
-
-// Criação da cena de carregamento com animação do carrinho
-function createLoadingScene() {
-  const loadingScene = document.querySelector(".loading-scene");
-
-  const road = document.createElement("div");
-  road.classList.add("road");
-
-  const car = document.createElement("div");
-  car.classList.add("electric-car");
-
-  loadingScene.appendChild(road);
-  loadingScene.appendChild(car);
-}
-
-createLoadingScene();
-
-// Menu com rolagem suave
-const menuLinks = document.querySelectorAll("header nav a");
-menuLinks.forEach(link => {
-  link.addEventListener("click", event => {
-    event.preventDefault();
-    const targetId = link.getAttribute("href").substring(1);
-    document.getElementById(targetId).scrollIntoView({
-      behavior: "smooth"
-    });
-  });
-});
-
-// Imagens dinâmicas nas seções
-function loadDynamicImages() {
-  const heroSection = document.querySelector("#hero");
-  heroSection.style.backgroundImage = "url('https://images.unsplash.com/photo-1527430253228-e93688616381?auto=format&fit=crop&w=1950&q=80')";
-
-  const aboutSection = document.querySelector("#about");
-  aboutSection.style.backgroundImage = "url('https://images.unsplash.com/photo-1502920917128-1aa500764b01?auto=format&fit=crop&w=1950&q=80')";
-  aboutSection.style.backgroundSize = "cover";
-}
-
-loadDynamicImages();
-
-// Efeito de animação de entrada suave para seções
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
+    if (progress >= 100) {
+      clearInterval(interval);
     }
-  });
-}, {
-  threshold: 0.5
-});
+  }, 30);
+}
 
-document.querySelectorAll("section").forEach(section => {
-  observer.observe(section);
-});
+// Função para controlar o vídeo de fundo em cada seção
+function setBackgroundVideos() {
+  const heroSection = document.querySelector('#hero');
+  const heroVideo = document.createElement('video');
+  heroVideo.src = 'https://www.videvo.net/videvo_files/converted/2017_11/preview/171106_04_SolarPanels2_1080p.mp489368.webm';
+  heroVideo.autoplay = true;
+  heroVideo.loop = true;
+  heroVideo.muted = true;
+  heroSection.appendChild(heroVideo);
+}
+
+// Chamadas das funções principais
+setBackgroundVideos();
+animateLoadingBar();
