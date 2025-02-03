@@ -1,38 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
   const languageContainer = document.querySelector(".language-container");
   const introContainer = document.querySelector(".intro-container");
-  const mainContent = document.querySelector("main");
-  const flags = document.querySelectorAll(".flag");
-  const car = document.querySelector(".electric-car");
+  const mainContent = document.querySelector(".main-container");
   const loadingBar = document.querySelector(".loading-bar");
+  const loadingText = document.querySelector(".loading-percentage");
 
-  // Exibição do seletor de idiomas
-  flags.forEach((flag) => {
+  let loadPercentage = 0;
+
+  // Exibir o seletor de idioma
+  document.querySelectorAll(".flag").forEach((flag) => {
     flag.addEventListener("click", () => {
       languageContainer.classList.add("hidden");
       showLoadingScreen();
     });
   });
 
-  // Função para exibir a tela de loading
+  // Exibir a tela de loading
   function showLoadingScreen() {
     introContainer.classList.remove("hidden");
-    setTimeout(hideLoadingScreen, 4000);
+    animateLoading();
   }
 
-  // Oculta a tela de loading e exibe o conteúdo principal
+  // Ocultar o loading e exibir a home
   function hideLoadingScreen() {
     introContainer.classList.add("hidden");
     mainContent.classList.remove("hidden");
   }
 
-  // Animação do carrinho durante o loading
+  // Animação de carregamento com raios e porcentagem
   function animateLoading() {
-    car.style.animation = "drive 4s linear infinite";
-    loadingBar.style.animation = "loadingBar 4s linear infinite";
+    const interval = setInterval(() => {
+      if (loadPercentage >= 100) {
+        clearInterval(interval);
+        hideLoadingScreen();
+      } else {
+        loadPercentage++;
+        loadingText.textContent = `${loadPercentage}%`;
+        loadingBar.style.width = `${loadPercentage}%`;
+      }
+    }, 40); // Velocidade do carregamento
   }
-
-  animateLoading();
 });
-
-
