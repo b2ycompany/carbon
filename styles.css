@@ -1,152 +1,116 @@
-/* CSS para layout e animações do site */
-
-/* Estilização geral */
+/** Estilo geral **/
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f0f8ff;
-}
-
-h1, h2 {
-  text-align: center;
-  color: #004d40;
+  overflow-x: hidden;
 }
 
 .hidden {
   display: none;
 }
 
-/* Seletor de idiomas */
-.language-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #e0f7fa, #006064);
-  color: #ffffff;
-}
-
-.flags {
-  display: flex;
-  gap: 15px;
-}
-
-.flag {
-  background: #004d40;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.flag:hover {
-  background: #00796b;
-}
-
-/* Tela de carregamento */
+/**** Tela de introdução ****/
 .intro-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(135deg, #004d40, #e0f7fa);
-  color: white;
-}
-
-.road {
-  width: 100%;
-  max-width: 600px;
-  height: 10px;
-  background: #004d40;
+  background-color: #e3f6fc;
   position: relative;
-  margin: 20px 0;
 }
 
-.car {
-  width: 50px;
-  height: 30px;
-  background: #00bfa5;
-  border-radius: 10px;
-  position: absolute;
-  animation: drive 3s linear infinite;
-}
-
-@keyframes drive {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-.loading-bar-container {
+.loading-bar-wrapper {
   width: 80%;
-  max-width: 600px;
-  background: #004d40;
-  height: 8px;
-  border-radius: 4px;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  position: relative;
   overflow: hidden;
+  margin-top: 20px;
 }
 
 .loading-bar {
-  height: 8px;
-  background: #00bfa5;
-  width: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  border-radius: 5px;
 }
 
 .loading-percentage {
   margin-top: 10px;
-  color: white;
+  font-size: 1.2em;
+  color: #333;
 }
 
-/* Sessões principais */
+.car-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+.car {
+  position: absolute;
+  top: -15px;
+  width: 50px;
+  height: 50px;
+  background-image: url('car-icon.png'); /* Ícone fictício do carrinho */
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: moveCar 4s linear infinite;
+}
+
+/**** Página principal ****/
 .main-container {
-  background: #ffffff;
+  display: none;
+  padding: 20px;
+  background-color: #f0fff0;
+  min-height: 100vh;
 }
 
-.hero-section {
-  background: linear-gradient(135deg, #004d40, #e0f7fa);
-  padding: 50px;
-  text-align: center;
-  color: white;
-}
-
-.services-section {
-  padding: 50px;
-  background: #e0f7fa;
-}
-
-.services {
+/**** Bandeiras de idiomas ****/
+.language-container {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #d0f0c0;
+  position: relative;
 }
 
-.service-card {
-  background: white;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  max-width: 300px;
+.flag-wrapper {
+  display: flex;
+  gap: 20px;
 }
 
-.location-section {
-  background: #ffffff;
-  padding: 50px;
-  text-align: center;
+.flag {
+  cursor: pointer;
+  width: 60px;
+  height: 40px;
+  background-size: cover;
+  border: 2px solid #fff;
+  border-radius: 5px;
 }
 
-footer {
-  background: #004d40;
-  color: white;
-  text-align: center;
-  padding: 20px;
+.flag.portuguese {
+  background-image: url('flag-portugal.png'); /* Fictício */
 }
 
+.flag.english {
+  background-image: url('flag-usa.png'); /* Fictício */
+}
+
+.flag.spanish {
+  background-image: url('flag-spain.png'); /* Fictício */
+}
+
+@keyframes moveCar {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 90%;
+  }
+}
