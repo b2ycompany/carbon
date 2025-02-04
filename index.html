@@ -5,43 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sustainable Site</title>
   <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Tela de Seleção de Idioma -->
+  <!-- Tela de seleção de idioma -->
   <div class="language-container">
-    <h1>Escolha seu idioma</h1>
+    <h1>Selecione o Idioma</h1>
     <div class="flags">
-      <img src="flag-en.png" alt="English" class="flag">
-      <img src="flag-pt.png" alt="Português" class="flag">
+      <div class="flag" data-lang="pt">
+        <img src="images/portuguese-flag.png" alt="Português">
+        <p>Português</p>
+      </div>
+      <div class="flag" data-lang="es">
+        <img src="images/spanish-flag.png" alt="Español">
+        <p>Español</p>
+      </div>
+      <div class="flag" data-lang="en">
+        <img src="images/english-flag.png" alt="English">
+        <p>English</p>
+      </div>
     </div>
   </div>
 
-  <!-- Tela de Carregamento -->
+  <!-- Tela de carregamento -->
   <div class="intro-container hidden">
-    <div class="loading-section">
-      <div class="loading-road">
-        <div class="car"></div>
-      </div>
-      <div class="loading-bar-container">
-        <div class="loading-bar"></div>
-        <div class="loading-percentage">0%</div>
-      </div>
+    <h1>Carregando Sustentavelmente...</h1>
+    <div class="loading-bar-container">
+      <div class="loading-bar"></div>
     </div>
+    <p class="loading-percentage">0%</p>
+    <div class="car"></div>
   </div>
 
-  <!-- Conteúdo Principal -->
+  <!-- Conteúdo principal -->
   <div class="main-container hidden">
     <header>
-      <h1>Bem-vindo ao site sustentável</h1>
+      <h1>Bem-vindo ao Site Sustentável</h1>
     </header>
-    <section>
-      <p>Nosso compromisso com energia limpa e sustentabilidade é prioridade.</p>
-    </section>
+    <main>
+      <p>Este é o conteúdo principal da página.</p>
+    </main>
     <footer>
-      <p>Localização do escritório: Avenida Sustentável, 123.</p>
+      <p>Localização do Escritório: Rua Sustentável, 123, Cidade Verde</p>
     </footer>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
