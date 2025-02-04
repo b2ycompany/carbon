@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
       loadingBar.style.width = `${progress}%`;
       loadingPercentage.textContent = `${progress}%`;
       progress++;
-      setTimeout(updateLoading, 30); // Velocidade do carregamento
+      setTimeout(updateLoading, 50); // Velocidade do carregamento
     } else {
       // Esconde a tela de carregamento e mostra a página principal
       introContainer.classList.add("hidden");
@@ -28,7 +28,16 @@ window.addEventListener("DOMContentLoaded", () => {
     flag.addEventListener("click", () => {
       languageContainer.classList.add("hidden");
       introContainer.classList.remove("hidden");
+      progress = 0; // Reinicia o progresso
       updateLoading(); // Inicia o carregamento
     });
   });
+
+  // Reinicia a posição do carrinho durante o carregamento
+  function resetCarPosition() {
+    const car = document.querySelector(".car");
+    car.style.left = "0%";
+  }
+
+  resetCarPosition();
 });
