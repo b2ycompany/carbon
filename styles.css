@@ -9,6 +9,7 @@ body {
   background-color: #0f0f17;
   color: #fff;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* Tela de Seleção de Idioma */
@@ -68,43 +69,31 @@ body {
 }
 .loading-scene {
   position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  width: 300px;
+  height: 200px;
 }
 .electric-car {
-  width: 100px;
-  height: 50px;
-  background: blue;
+  width: 120px;
+  height: 60px;
+  background: #00ffcc;
   position: absolute;
   left: 0;
   bottom: 50px;
-  border-radius: 5px;
+  border-radius: 10px;
   animation: drive 4s linear infinite;
 }
 @keyframes drive {
-  0% { left: -120px; }
+  0% { left: -150px; }
   100% { left: 100%; }
-}
-.forest {
-  position: absolute;
-  background: url('https://example.com/forest.png') no-repeat;
-  width: 100%;
-  height: 200px;
-  bottom: 0;
 }
 .charging-station {
   width: 60px;
-  height: 120px;
-  background: #00ffcc;
+  height: 150px;
+  background: linear-gradient(to bottom, #00ffcc, #004d40);
   position: absolute;
   right: 10%;
-  bottom: 50px;
-}
-
-/* Site Principal */
-.hidden {
-  display: none;
+  bottom: 40px;
+  border-radius: 8px;
 }
 
 /* Header */
@@ -144,15 +133,20 @@ header nav a:hover {
 
 /* Hero Section */
 #hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   height: 100vh;
-  background: url('https://example.com/tech-bg.jpg') center/cover no-repeat;
   text-align: center;
   color: #fff;
   padding: 2rem;
+}
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 #hero h1 {
   font-size: 3rem;
