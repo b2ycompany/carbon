@@ -1,95 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lion Solution - Tecnologia Sustentável</title>
+  <title>Sustainable Site</title>
   <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
 </head>
 <body>
   <!-- Tela de Seleção de Idioma -->
   <div class="language-container">
-    <div class="language-content">
-      <h1>Bem-vindo à Lion Solution</h1>
-      <p>Selecione seu idioma:</p>
-      <div class="flags">
-        <div class="flag" data-lang="pt-BR">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Português">
-          <span>Português</span>
-        </div>
-        <div class="flag" data-lang="en-US">
-          <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English">
-          <span>English</span>
-        </div>
-        <div class="flag" data-lang="es-ES">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Español">
-          <span>Español</span>
-        </div>
-      </div>
+    <h1>Escolha seu idioma</h1>
+    <div class="flags">
+      <img src="flag-en.png" alt="English" class="flag">
+      <img src="flag-pt.png" alt="Português" class="flag">
     </div>
   </div>
 
-  <!-- Tela de Animação -->
+  <!-- Tela de Carregamento -->
   <div class="intro-container hidden">
-    <div class="animation-content">
-      <h1>Carregando Lion Solution...</h1>
-      <div class="loader">
-        <div class="electric-bar">
-          <div class="progress"></div>
-        </div>
+    <div class="loading-section">
+      <div class="loading-road">
+        <div class="car"></div>
+      </div>
+      <div class="loading-bar-container">
+        <div class="loading-bar"></div>
+        <div class="loading-percentage">0%</div>
       </div>
     </div>
   </div>
 
-  <!-- Site Principal -->
+  <!-- Conteúdo Principal -->
   <div class="main-container hidden">
     <header>
-      <div class="logo">Lion Solution</div>
-      <nav>
-        <ul>
-          <li><a href="#hero">Início</a></li>
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#apps">Aplicativos</a></li>
-          <li><a href="#contact">Contato</a></li>
-        </ul>
-      </nav>
+      <h1>Bem-vindo ao site sustentável</h1>
     </header>
-
-    <section id="hero">
-      <h1>Tecnologia Sustentável</h1>
-      <p>Solucionando desafios com inovação e respeito ao meio ambiente</p>
+    <section>
+      <p>Nosso compromisso com energia limpa e sustentabilidade é prioridade.</p>
     </section>
-
-    <section id="about">
-      <h2>Sobre Nós</h2>
-      <p>A Lion Solution é líder em soluções tecnológicas que promovem sustentabilidade e impacto positivo no meio ambiente.</p>
-    </section>
-
-    <section id="apps">
-      <h2>Nossos Aplicativos</h2>
-      <div class="app">
-        <h3>B2Y Carbon</h3>
-        <p>Gerencie os quilômetros rodados e acompanhe o sequestro de carbono.</p>
-      </div>
-      <div class="app">
-        <h3>B2Y Frequency</h3>
-        <p>Aplicativo de vibrações terapêuticas para bem-estar.</p>
-      </div>
-      <div class="app">
-        <h3>B2Y Sales</h3>
-        <p>Classificados para vendas, compras e investimentos em negócios.</p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contato</h2>
-      <p>Entre em contato conosco através de nossas redes sociais e canais oficiais.</p>
-    </section>
-
     <footer>
-      <p>© 2025 Lion Solution | Tecnologia Sustentável para um Mundo Melhor</p>
+      <p>Localização do escritório: Avenida Sustentável, 123.</p>
     </footer>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
