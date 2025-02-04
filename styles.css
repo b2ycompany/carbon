@@ -1,1 +1,152 @@
+/* CSS para layout e animações do site */
+
+/* Estilização geral */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #004d40;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Seletor de idiomas */
+.language-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e0f7fa, #006064);
+  color: #ffffff;
+}
+
+.flags {
+  display: flex;
+  gap: 15px;
+}
+
+.flag {
+  background: #004d40;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.flag:hover {
+  background: #00796b;
+}
+
+/* Tela de carregamento */
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #004d40, #e0f7fa);
+  color: white;
+}
+
+.road {
+  width: 100%;
+  max-width: 600px;
+  height: 10px;
+  background: #004d40;
+  position: relative;
+  margin: 20px 0;
+}
+
+.car {
+  width: 50px;
+  height: 30px;
+  background: #00bfa5;
+  border-radius: 10px;
+  position: absolute;
+  animation: drive 3s linear infinite;
+}
+
+@keyframes drive {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.loading-bar-container {
+  width: 80%;
+  max-width: 600px;
+  background: #004d40;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.loading-bar {
+  height: 8px;
+  background: #00bfa5;
+  width: 0;
+}
+
+.loading-percentage {
+  margin-top: 10px;
+  color: white;
+}
+
+/* Sessões principais */
+.main-container {
+  background: #ffffff;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #004d40, #e0f7fa);
+  padding: 50px;
+  text-align: center;
+  color: white;
+}
+
+.services-section {
+  padding: 50px;
+  background: #e0f7fa;
+}
+
+.services {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}
+
+.location-section {
+  background: #ffffff;
+  padding: 50px;
+  text-align: center;
+}
+
+footer {
+  background: #004d40;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
 
