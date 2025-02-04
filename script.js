@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const loadingPercentage = document.querySelector(".loading-percentage");
   const mainContainer = document.querySelector(".main-container");
   const languageContainer = document.querySelector(".language-container");
+  const car = document.querySelector(".car");
 
   let progress = 0;
 
@@ -13,6 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (progress <= 100) {
       loadingBar.style.width = `${progress}%`;
       loadingPercentage.textContent = `${progress}%`;
+      car.style.left = `${progress}%`;
       progress++;
       setTimeout(updateLoading, 50); // Velocidade do carregamento
     } else {
@@ -35,7 +37,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Reinicia a posição do carrinho durante o carregamento
   function resetCarPosition() {
-    const car = document.querySelector(".car");
     car.style.left = "0%";
   }
 
