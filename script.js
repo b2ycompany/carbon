@@ -3,7 +3,7 @@ const introContainer = document.querySelector(".intro-container");
 const mainContainer = document.querySelector(".main-container");
 const flags = document.querySelectorAll(".flag");
 
-// Conteúdo para diferentes idiomas
+// Referência ao conteúdo dinâmico para traduzir
 const contentData = {
   "pt-BR": {
     "heroTitle": "Tecnologia Sustentável",
@@ -28,7 +28,7 @@ const contentData = {
   }
 };
 
-// Clique para selecionar idioma
+// Adiciona evento de clique para cada bandeira
 flags.forEach(flag => {
   flag.addEventListener("click", () => {
     const selectedLang = flag.dataset.lang;
@@ -39,11 +39,12 @@ flags.forEach(flag => {
     // Mostra a tela de animação
     introContainer.classList.remove("hidden");
 
+    // Após 3 segundos, carrega o site principal com conteúdo traduzido
     setTimeout(() => {
       introContainer.style.display = "none";
       mainContainer.classList.remove("hidden");
       applyContent(selectedLang);
-    }, 3000); 
+    }, 3000); // Tempo em milissegundos (3 segundos)
   });
 });
 
@@ -55,21 +56,17 @@ function applyContent(lang) {
   document.querySelector("footer p").textContent = contentData[lang].footerText;
 }
 
-// Animação do carrinho
+// Animação do carrinho elétrico
 function createLoadingScene() {
   const loadingScene = document.querySelector(".loading-scene");
 
   const car = document.createElement("div");
   car.classList.add("electric-car");
 
-  const forest = document.createElement("div");
-  forest.classList.add("forest");
-
   const chargingStation = document.createElement("div");
   chargingStation.classList.add("charging-station");
 
   loadingScene.appendChild(car);
-  loadingScene.appendChild(forest);
   loadingScene.appendChild(chargingStation);
 }
 
