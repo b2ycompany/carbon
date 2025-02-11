@@ -1,3 +1,5 @@
+
+/* Reset Básico */
 * {
   margin: 0;
   padding: 0;
@@ -10,19 +12,185 @@ body {
   overflow-x: hidden;
 }
 
+/* Tela de Seleção de Idioma */
+.language-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #004d40, #66bb6a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.language-content {
+  text-align: center;
+}
+.flags {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.flag {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.flag:hover {
+  transform: scale(1.2);
+}
+.flag img {
+  width: 100px;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+.flag span {
+  display: block;
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+/* Tela de Animação */
+.intro-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #004d40, #66bb6a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.loading-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.electric-car {
+  width: 100px;
+  height: 50px;
+  background: blue;
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+  border-radius: 5px;
+  animation: drive 4s linear infinite;
+}
+@keyframes drive {
+  0% { left: -120px; }
+  100% { left: 100%; }
+}
+.forest {
+  position: absolute;
+  background: url('https://example.com/forest.png') no-repeat;
+  width: 100%;
+  height: 200px;
+  bottom: 0;
+}
+.charging-station {
+  width: 60px;
+  height: 120px;
+  background: #00ffcc;
+  position: absolute;
+  right: 10%;
+  bottom: 50px;
+}
+
+/* Site Principal */
 .hidden {
   display: none;
 }
 
-/* Headers, Sections e Formulários */
+/* Header */
 header {
   background: #004d40;
+  color: #fff;
   padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
-.contact-form {
-  max-width: 600px;
+header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00ffcc;
+  text-shadow: 0px 0px 8px #00ffcc;
 }
-.building-photo {
-  max-width: 100%;
-  border-radius: 10px;
+header nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+header nav a:hover {
+  color: #00ffcc;
+  text-shadow: 0px 0px 8px #00ffcc;
+}
+
+/* Hero Section */
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('https://example.com/tech-bg.jpg') center/cover no-repeat;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+}
+#hero h1 {
+  font-size: 3rem;
+  animation: fadeIn 2s;
+  text-shadow: 0px 0px 12px #00ffcc;
+}
+#hero p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  animation: fadeIn 3s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* About Section */
+#about {
+  padding: 4rem 2rem;
+  background-color: #002d26;
+  color: #fff;
+  text-align: center;
+}
+#about h2 {
+  font-size: 2.5rem;
+  text-shadow: 0px 0px 12px #00ffcc;
+}
+#about p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+  background: #004d40;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.3);
 }
