@@ -1,3 +1,5 @@
+// Suporte de troca de idioma e animações
+
 const languageContainer = document.querySelector(".language-container");
 const introContainer = document.querySelector(".intro-container");
 const mainContainer = document.querySelector(".main-container");
@@ -33,6 +35,8 @@ flags.forEach(flag => {
   flag.addEventListener("click", () => {
     const selectedLang = flag.dataset.lang;
 
+    console.log(`Idioma selecionado: ${selectedLang}`);
+
     // Oculta a tela de seleção de idioma
     languageContainer.style.display = "none";
 
@@ -63,11 +67,42 @@ function createLoadingScene() {
   const car = document.createElement("div");
   car.classList.add("electric-car");
 
+  const forest = document.createElement("div");
+  forest.classList.add("forest");
+
   const chargingStation = document.createElement("div");
   chargingStation.classList.add("charging-station");
 
   loadingScene.appendChild(car);
+  loadingScene.appendChild(forest);
   loadingScene.appendChild(chargingStation);
 }
 
 createLoadingScene();
+
+// Adiciona interatividade ao menu
+const menuLinks = document.querySelectorAll("header nav a");
+menuLinks.forEach(link => {
+  link.addEventListener("mouseover", () => {
+    link.style.color = "#00ffcc";
+    link.style.textShadow = "0px 0px 12px #00ffcc";
+  });
+  link.addEventListener("mouseout", () => {
+    link.style.color = "#fff";
+    link.style.textShadow = "none";
+  });
+});
+
+// Efeito de rolagem suave
+menuLinks.forEach(link => {
+  link.addEventListener("click", event => {
+    event.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    document.getElementById(targetId).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
+
+
+
