@@ -11,71 +11,97 @@ body {
   overflow-x: hidden;
 }
 
-/* Estilos para tornar o site responsivo */
-@media (max-width: 768px) {
-  header nav ul {
-    flex-direction: column;
-    text-align: center;
-  }
-  .flags {
-    flex-direction: column;
-  }
-}
-
-/* Background para cada seção */
-#hero {
-  background: url('https://b2ycompany.github.io/carbon/background.png') center/cover no-repeat;
-}
-#about {
-  background: url('https://example.com/about-background.jpg') center/cover no-repeat;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-#apps {
-  background: url('https://example.com/apps-background.jpg') center/cover no-repeat;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-#contact {
-  background: url('https://example.com/contact-background.jpg') center/cover no-repeat;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-/* Formulário de Contato Futurista */
-#contact form {
-  max-width: 500px;
-  margin: 0 auto;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px #00ffcc;
-}
-#contact input, #contact textarea {
+/* Tela de Seleção de Idioma */
+.language-container {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 5px;
-  background: #222;
-  color: #fff;
+  height: 100%;
+  background: linear-gradient(to bottom, #004d40, #66bb6a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
-#contact button {
-  width: 100%;
-  padding: 10px;
-  background: #00ffcc;
-  border: none;
-  color: #000;
-  font-weight: bold;
+.language-content {
+  text-align: center;
+}
+.flags {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.flag {
+  text-align: center;
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform 0.3s;
 }
-#contact button:hover {
-  background: #008f99;
+.flag:hover {
+  transform: scale(1.2);
+}
+.flag img {
+  width: 100px;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+.flag span {
+  display: block;
+  margin-top: 5px;
+  font-size: 1rem;
 }
 
-/* Mapa Fixado */
-#map {
+/* Tela de Animação */
+.intro-container {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 400px;
+  height: 100%;
+  background: linear-gradient(to bottom, #004d40, #66bb6a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Hero Section */
+#hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  animation: fadeIn 2s;
+  text-shadow: 0px 0px 12px #00ffcc;
+}
+#hero p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
