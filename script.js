@@ -1,5 +1,4 @@
 // Suporte de troca de idioma e animações
-
 const languageContainer = document.querySelector(".language-container");
 const introContainer = document.querySelector(".intro-container");
 const mainContainer = document.querySelector(".main-container");
@@ -60,25 +59,18 @@ function applyContent(lang) {
   document.querySelector("footer p").textContent = contentData[lang].footerText;
 }
 
-// Animação do carrinho elétrico
-function createLoadingScene() {
-  const loadingScene = document.querySelector(".loading-scene");
-
-  const car = document.createElement("div");
-  car.classList.add("electric-car");
-
-  const forest = document.createElement("div");
-  forest.classList.add("forest");
-
-  const chargingStation = document.createElement("div");
-  chargingStation.classList.add("charging-station");
-
-  loadingScene.appendChild(car);
-  loadingScene.appendChild(forest);
-  loadingScene.appendChild(chargingStation);
+// Inicializa o mapa
+function initMap() {
+  const location = { lat: -23.4935, lng: -46.8495 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 15,
+    center: location
+  });
+  new google.maps.Marker({
+    position: location,
+    map: map
+  });
 }
-
-createLoadingScene();
 
 // Adiciona interatividade ao menu
 const menuLinks = document.querySelectorAll("header nav a");
@@ -103,6 +95,3 @@ menuLinks.forEach(link => {
     });
   });
 });
-
-
-
