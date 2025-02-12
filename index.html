@@ -35,11 +35,7 @@
     <div class="animation-content">
       <h1>Carregando Lion Solution...</h1>
       <div class="loader">
-        <div class="loading-scene">
-          <div class="electric-car"></div>
-          <div class="charging-station"></div>
-          <div class="forest"></div>
-        </div>
+        <div class="loading-scene"></div>
       </div>
     </div>
   </div>
@@ -60,7 +56,7 @@
 
     <section id="hero">
       <video class="background-video" autoplay muted loop>
-        <source src="https://www.videvo.net/videvo_files/converted/2021_11/preview/211029_02_Business_04_1080p.mp412822.mp4" type="video/mp4">
+        <source src="video.mp4" type="video/mp4">
       </video>
       <h1>Tecnologia Sustentável</h1>
       <p>Solucionando desafios com inovação e respeito ao meio ambiente</p>
@@ -73,23 +69,20 @@
 
     <section id="apps">
       <h2>Nossos Aplicativos</h2>
-      <div class="app">
-        <h3>B2Y Carbon</h3>
-        <p>Gerencie os quilômetros rodados e acompanhe o sequestro de carbono.</p>
-      </div>
-      <div class="app">
-        <h3>B2Y Frequency</h3>
-        <p>Aplicativo de vibrações terapêuticas para bem-estar.</p>
-      </div>
-      <div class="app">
-        <h3>B2Y Sales</h3>
-        <p>Classificados para vendas, compras e investimentos em negócios.</p>
-      </div>
+      <div class="app"><h3>B2Y Carbon</h3><p>Gerencie os quilômetros rodados e acompanhe o sequestro de carbono.</p></div>
+      <div class="app"><h3>B2Y Frequency</h3><p>Aplicativo de vibrações terapêuticas para bem-estar.</p></div>
+      <div class="app"><h3>B2Y Sales</h3><p>Classificados para vendas, compras e investimentos em negócios.</p></div>
     </section>
 
     <section id="contact">
       <h2>Contato</h2>
-      <p>Entre em contato conosco através de nossas redes sociais e canais oficiais.</p>
+      <form class="contact-form">
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="map"></div>
     </section>
 
     <footer>
