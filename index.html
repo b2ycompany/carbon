@@ -8,7 +8,44 @@
   <script defer src="script.js"></script>
 </head>
 <body>
-  <div class="main-container">
+  <!-- Tela de Seleção de Idioma -->
+  <div class="language-container">
+    <div class="language-content">
+      <h1>Bem-vindo à Lion Solution</h1>
+      <p>Selecione seu idioma:</p>
+      <div class="flags">
+        <div class="flag" data-lang="pt-BR">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Português">
+          <span>Português</span>
+        </div>
+        <div class="flag" data-lang="en-US">
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English">
+          <span>English</span>
+        </div>
+        <div class="flag" data-lang="es-ES">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Español">
+          <span>Español</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tela de Animação -->
+  <div class="intro-container hidden">
+    <div class="animation-content">
+      <h1>Carregando Lion Solution...</h1>
+      <div class="loader">
+        <div class="loading-scene">
+          <div class="electric-car"></div>
+          <div class="charging-station"></div>
+          <div class="forest"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Principal -->
+  <div class="main-container hidden">
     <header>
       <div class="logo">Lion Solution</div>
       <nav>
@@ -29,33 +66,30 @@
       <p>Solucionando desafios com inovação e respeito ao meio ambiente</p>
     </section>
 
+    <section id="about">
+      <h2>Sobre Nós</h2>
+      <p>A Lion Solution é líder em soluções tecnológicas que promovem sustentabilidade e impacto positivo no meio ambiente.</p>
+    </section>
+
+    <section id="apps">
+      <h2>Nossos Aplicativos</h2>
+      <div class="app">
+        <h3>B2Y Carbon</h3>
+        <p>Gerencie os quilômetros rodados e acompanhe o sequestro de carbono.</p>
+      </div>
+      <div class="app">
+        <h3>B2Y Frequency</h3>
+        <p>Aplicativo de vibrações terapêuticas para bem-estar.</p>
+      </div>
+      <div class="app">
+        <h3>B2Y Sales</h3>
+        <p>Classificados para vendas, compras e investimentos em negócios.</p>
+      </div>
+    </section>
+
     <section id="contact">
       <h2>Contato</h2>
-      <p>Entre em contato conosco através do formulário abaixo:</p>
-      <div class="contact-container">
-        <div class="contact-form">
-          <form>
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Enviar</button>
-          </form>
-        </div>
-        <div class="map-container">
-          <h3>Nosso Escritório</h3>
-          <img src="escritorio.jpg" alt="Escritório da Lion Solution" class="office-thumbnail">
-          <iframe 
-            src="https://www.google.com/maps/embed/v1/place?q=Torre+Jacarandá+-+Av.+Marcos+Penteado+de+Ulhoa+Rodrigues,+939+-+8º+Andar+-+Alphaville,+Barueri+-+SP,+06460-040&key=SUA_CHAVE_API"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
+      <p>Entre em contato conosco através de nossas redes sociais e canais oficiais.</p>
     </section>
 
     <footer>
